@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.documentation import include_docs_urls
-
+from data.views import UserDataList
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('data.urls')),
     path('docs/', include_docs_urls(title = 'Data api')),
+    path('users/', UserDataList.as_view(), name='user-list')
 ]
