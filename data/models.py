@@ -16,6 +16,5 @@ class Data(models.Model):
     
     def save(self, *args, **kwargs):
         if self.password:
-            password = self.password.decode()  # Convertir de bytes a str
-            self.password = make_password(password, hasher=Argon2PasswordHasher())
+            self.password = make_password(self.password, hasher=Argon2PasswordHasher())
         super().save(*args, **kwargs)
