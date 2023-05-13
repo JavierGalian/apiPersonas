@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class Data(models.Model):
     name = models.CharField(max_length=200, null=False, blank=False)
     last_name = models.CharField(max_length=200, null=False, blank=False)
-    name_user = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
+    name_user = models.CharField(max_length=200, null=False, blank=False)
     email = models.EmailField(max_length=200 , null=False ,unique=True, blank=False)
     date_birth = models.DateField(null=False, blank=False)
     password = models.CharField(max_length=128, null=False, blank=False, default='', 
