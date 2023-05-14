@@ -1,8 +1,10 @@
 from .models import Data
-from rest_framework import viewsets, permissions
 from .serializers import DataSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
-class DataViewSet(viewsets.ModelViewSet):
-    queryset = Data.objects.all()
-    permission_classes = [permissions.AllowAny]
-    serializer_class = DataSerializer
+class DataApiView(APIView):
+    def get(self, request):
+        users = Data.objects.all()
+        users_serializers = DataSerializer(users, many = True)
+        return Response(users_serializers.data) 
