@@ -1,10 +1,9 @@
 from .models import Data
 from .serializers import DataSerializer
-from rest_framework.views import APIView
+#from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status #estado de respuesta 200,300 y 400
-
 
 @api_view(['GET','POST'])
 def data_api_view(request):

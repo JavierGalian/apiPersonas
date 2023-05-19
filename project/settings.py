@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'argon2',
+    'rest_framework_docs',
     'corsheaders',
     'rest_framework',
     'coreapi', #agrega documentacion a la api
