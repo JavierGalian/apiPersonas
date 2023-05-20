@@ -4,6 +4,11 @@ from .serializers import DataSerializer
 from django.http import JsonResponse
 from django.views import View
 from .models import Data
+
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework import status
+from rest_framework.response import Response
+
 # Create your views here.
 
 class UserDataList(generics.ListAPIView):
@@ -40,3 +45,6 @@ class DataDetail(generics.RetrieveUpdateDestroyAPIView):
 #            password = password,
 #        )
 #        return JsonResponse({'message':'Usuario creado exitosamente.'})
+
+
+

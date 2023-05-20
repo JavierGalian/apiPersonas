@@ -13,7 +13,7 @@ class Data(models.Model):
     password = models.CharField(max_length=128, null=False, blank=False, default='', 
                                 validators=[validate_password_strength])
     created_at = models.DateTimeField(auto_now_add=True)
-    
+    is_active = models.BooleanField(default=True)
     def save(self, *args, **kwargs):
         if self.password:
             self.password = make_password(self.password, hasher=Argon2PasswordHasher())
